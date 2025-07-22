@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
 
 const LIKES_KEY = 'portfolio_likes';
 const VISITORS_KEY = 'portfolio_visitors';
@@ -7,7 +12,7 @@ const VISITORS_KEY = 'portfolio_visitors';
 // GET - Obtener el número actual de likes
 export async function GET() {
   try {
-    const likes = await kv.get<number>(LIKES_KEY) || 0;
+    const likes = (await redis.get<number>(LIKES_KEY)) || 0;
     return NextResponse.json({ likes });
   } catch (error) {
     console.error('Error reading likes:', error);
@@ -24,8 +29,8 @@ export async function POST(request: NextRequest) {
                'unknown';
     
     // Obtener datos actuales
-    const currentLikes = await kv.get<number>(LIKES_KEY) || 0;
-    const visitors = await kv.get<Array<{ip: string, timestamp: number}>>(VISITORS_KEY) || [];
+    const currentLikes = (await redis.get<number>(LIKES_KEY)) || 0;
+    const visitors = (await redis.get<Array<{ip: string, timestamp: number}>>(VISITORS_KEY)) || [];
     
     // Verificar si esta IP ya dio like en las últimas 24 horas
     const now = Date.now();
@@ -40,7 +45,7 @@ export async function POST(request: NextRequest) {
     if (hasLiked) {
       return NextResponse.json({ 
         success: false, 
-        message: 'Ya has dado like en las últimas 24 horas',
+        message: 'You have already liked in the last 24 hours',
         likes: currentLikes 
       });
     }
@@ -49,23 +54,23 @@ export async function POST(request: NextRequest) {
     const newLikes = currentLikes + 1;
     const newVisitors = [...activeVisitors, { ip, timestamp: now }];
     
-    // Guardar en KV
+    // Guardar en Redis
     await Promise.all([
-      kv.set(LIKES_KEY, newLikes),
-      kv.set(VISITORS_KEY, newVisitors)
+      redis.set(LIKES_KEY, newLikes),
+      redis.set(VISITORS_KEY, newVisitors)
     ]);
     
     return NextResponse.json({ 
       success: true, 
       likes: newLikes,
-      message: '¡Gracias por tu like!' 
+      message: 'Thanks for your like!' 
     });
     
   } catch (error) {
     console.error('Error adding like:', error);
     return NextResponse.json({ 
       success: false, 
-      message: 'Error al procesar el like' 
+      message: 'Error processing like' 
     }, { status: 500 });
   }
 } 
