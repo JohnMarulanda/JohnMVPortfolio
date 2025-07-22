@@ -587,7 +587,7 @@ export const PROJECTS: Project[] = [
     year: "2024",
     status: "completed",
     links: {
-      live: "https://valorant-explorer.vercel.app",
+      live: "https://valorant-api-pied.vercel.app/",
       github: "https://github.com/JohnMarulanda/ValorantAPI"
     },
     features: [

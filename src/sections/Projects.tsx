@@ -89,7 +89,7 @@ const portfolioProjects: Project[] = [
       { title: "Built a responsive and interactive UI to explore agents, weapons, and maps" },
       { title: "Handled API rate limits, loading states, and error management for a smooth UX" }
     ],
-    liveLink: "https://valorant-explorer.vercel.app",
+    liveLink: "https://valorant-api-pied.vercel.app/",
     githubLink: "https://github.com/JohnMarulanda/ValorantAPI",
     image: valorantAPI,
     technologies: [
