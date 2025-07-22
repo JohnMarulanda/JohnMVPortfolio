@@ -4,6 +4,7 @@ import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import { BackToTopButton } from "@/components/BackToTopButton";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({subsets: ['latin'], variable: "--font-sans"})
 const calistoga = Calistoga({subsets: ['latin'], variable: "--font-serif", weight: ['400']})
@@ -45,6 +46,7 @@ export default function RootLayout({
         
         {/* Back to Top Button - Global */}
         <BackToTopButton />
+        <Analytics />
       </body>
     </html>
   );
