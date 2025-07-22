@@ -229,9 +229,9 @@ export const AboutSection = () => {
 
               <div className="space-y-4 text-white/80 leading-relaxed">
                 <p className="text-base md:text-lg">
-                  I'm a <span className="text-white font-semibold">Developer and UX/UI Designer</span> driven by a deep desire to grow, improve, and make a meaningful impact through technology.
+                  I&apos;m a <span className="text-white font-semibold">Developer and UX/UI Designer</span> driven by a deep desire to grow, improve, and make a meaningful impact through technology.
                   <br /><br />
-                  I'm currently pursuing a degree in <span className="text-white font-semibold">Systems Engineering at Universidad del Valle</span>. Over the years, I’ve worked on a variety of projects across <span className="text-white font-semibold">front-end, back-end, machine learning, design, and more</span>.
+                  I&apos;m currently pursuing a degree in <span className="text-white font-semibold">Systems Engineering at Universidad del Valle</span>. Over the years, I’ve worked on a variety of projects across <span className="text-white font-semibold">front-end, back-end, machine learning, design, and more</span>.
                   <br /><br />
                   What motivates me most is the opportunity to keep learning, to challenge myself every day, and to push boundaries in everything I create.
                 </p>
