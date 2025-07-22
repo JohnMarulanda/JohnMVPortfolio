@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove any conflicting background colors */
+body {
+  background: transparent !important;
+}
+
+/* Custom hover effects for achievements section */
+.skill-icon-individual:hover .hover-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.skill-icon-individual .hover-tooltip {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-5px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for modal */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.7);
+}
+
+
+@layer components {
+  .dock {
+    @apply fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-4 p-4 bg-black/20 backdrop-blur-lg rounded-full border border-white/10;
+  }
+
+  .dock-section {
+    @apply flex items-center gap-2;
+  }
+
+  .dock-divider {
+    @apply w-px h-6 bg-white/10;
+  }
+
+  .dock-icon {
+    @apply w-6 h-6 text-white/70 hover:text-white transition-all duration-300 hover:scale-110;
+  }
+
+  .mobile-menu-button {
+    @apply fixed bottom-8 right-8 p-4 bg-black/20 backdrop-blur-lg rounded-full border border-white/10 md:hidden;
+  }
+
+  .mobile-menu {
+    @apply fixed bottom-24 right-8 p-4 bg-black/20 backdrop-blur-lg rounded-2xl border border-white/10 flex flex-col gap-4 md:hidden;
+  }
+
+  .hero-ring {
+    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-purple-500/10 shadow-[0_0_100px_inset_rgba(168,85,247,0.1)];
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply lg:max-w-6xl;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Cursores personalizados de Wii */
+.wii-cursor-default {
+  cursor: url('/cursors/wii-pointer-ccw.cur'), auto !important;
+}
+
+.wii-cursor-pointer {
+  cursor: url('/cursors/wii-pointer-blue.cur'), pointer !important;
+}
+
+.wii-cursor-grab {
+  cursor: url('/cursors/wii-grab.cur'), grab !important;
+}
+
+.wii-cursor-grabbing {
+  cursor: url('/cursors/wii-grab-ccw.cur'), grabbing !important;
+}
+
+.wii-cursor-help {
+  cursor: url('/cursors/wii-help.cur'), help !important;
+}
+
+.wii-cursor-loading {
+  cursor: url('/cursors/wii-loading-cd.ani'), wait !important;
+}
+
+.wii-cursor-loading-ccw {
+  cursor: url('/cursors/wii-loading-cd-ccw.ani'), wait !important;
+}
+
+/* Aplicar cursor por defecto a toda la página */
+html, body {
+  cursor: url('/cursors/wii-pointer-ccw.cur'), auto !important;
+}
+
+/* Cursores específicos para diferentes elementos */
+a, button, [role="button"], .clickable {
+  cursor: url('/cursors/wii-pointer-blue.cur'), pointer !important;
+}
+
+a:hover, button:hover, [role="button"]:hover, .clickable:hover {
+  cursor: url('/cursors/wii-pointer-blue.cur'), pointer !important;
+}
+
+/* Elementos interactivos con cursor de agarre */
+.draggable, .resizable {
+  cursor: url('/cursors/wii-grab.cur'), grab !important;
+}
+
+.draggable:active, .resizable:active {
+  cursor: url('/cursors/wii-grab-ccw.cur'), grabbing !important;
+}
+
+/* Elementos con ayuda */
+.help-element, [title], .tooltip-trigger {
+  cursor: url('/cursors/wii-help.cur'), help !important;
+}
+
+/* Estados de carga */
+.loading, .loading * {
+  cursor: url('/cursors/wii-loading-cd.ani'), wait !important;
+}
+
+/* Inputs y formularios */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  cursor: url('/cursors/wii-pointer.cur'), text !important;
+}
+
+/* Elementos deshabilitados */
+button:disabled, input:disabled, .disabled {
+  cursor: url('/cursors/wii-help-ccw.cur'), not-allowed !important;
+}
+
+/* Elementos de navegación */
+.nav-item, .menu-item {
+  cursor: url('/cursors/wii-pointer-blue.cur'), pointer !important;
+}
+
+/* Elementos de proyecto y cards */
+.project-card, .achievement-card {
+  cursor: url('/cursors/wii-pointer-blue.cur'), pointer !important;
+}
+
+.project-card:hover, .achievement-card:hover {
+  cursor: url('/cursors/wii-pointer-blue.cur'), pointer !important;
+}
+
+
+
+/* Tooltip que solo aparece con hover directo en el icono */
+.skill-icon-individual:hover .hover-tooltip {
+  opacity: 1 !important;
+}
