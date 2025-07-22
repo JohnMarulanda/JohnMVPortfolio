@@ -6,6 +6,7 @@ import { Award, ExternalLink, Eye, X, Calendar, ArrowUpRight } from "lucide-reac
 import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiNodedotjs, SiPython, SiAmazon, SiGoogle, SiMeta } from "react-icons/si"
 import { useWiiCursor } from "@/hooks/useWiiCursor"
 import { StaticImageData } from "next/image"
+import Image from "next/image"
 
 // Importar imágenes específicas de achievements
 import awsMLImage from "@/assets/images-achievements/AWS_ML_page-0001.jpg"
@@ -151,7 +152,7 @@ export const AchievementsSection = () => {
   // Update cards when category changes
   useEffect(() => {
     setCards(filteredAchievements)
-  }, [selectedCategory])
+  }, [filteredAchievements])
 
   const removeCard = (id: number) => {
     setCards((prevCards) => {
@@ -308,9 +309,10 @@ export const AchievementsSection = () => {
                 {/* Certificate Image */}
                 <div className="aspect-[4/3] bg-gradient-to-br from-gray-700/50 to-gray-600/30 rounded-2xl border border-white/10 overflow-hidden relative group cursor-pointer"
                      {...createCursorHandlers('pointer')}>
-                  <img 
+                  <Image 
                     src={getImageUrl(selectedAchievement.imageUrl)} 
                     alt={selectedAchievement.title}
+                    fill
                     className="w-full h-full object-cover object-center rounded-2xl group-hover:scale-105 transition-transform duration-300"
                   />
                   {/* Hover overlay */}

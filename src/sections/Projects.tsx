@@ -90,7 +90,7 @@ const portfolioProjects: Project[] = [
       { title: "Handled API rate limits, loading states, and error management for a smooth UX" }
     ],
     liveLink: "https://valorant-explorer.vercel.app",
-    githubLink: "https://github.com/JohnMarulanda",
+    githubLink: "https://github.com/JohnMarulanda/ValorantAPI",
     image: valorantAPI,
     technologies: [
       { name: "Next.js", icon: <SiNextdotjs />, color: "text-white" },

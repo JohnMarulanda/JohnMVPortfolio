@@ -345,7 +345,7 @@ export const AboutSection = () => {
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
                     <FaPalette className="text-pink-400 text-xl" />
-                    <h4 className="text-lg font-semibold text-white">UX/UI</h4>
+                    <h4 className="text-lg font-semibold text-white">UX/UI & Design</h4>
                   </div>
                   <div className="grid grid-cols-3 gap-3">
                     {uxuiTech.map((tech, index) => (

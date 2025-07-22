@@ -223,7 +223,7 @@ export const HeroSection = () => {
             whileTap={{ scale: 0.95 }}
             {...createCursorHandlers('pointer')}
           >
-            <span className="font-semibold">Let's connect</span>
+            <span className="font-semibold">Let&apos;s connect</span>
             <span> 🤝 </span> 
           </motion.button>
         </div>

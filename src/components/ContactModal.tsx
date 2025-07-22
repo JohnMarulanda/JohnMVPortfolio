@@ -199,7 +199,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">Let's Connect!</h3>
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">Let&apos;s Connect!</h3>
                 <p className="text-white/60 text-sm md:text-base mt-1">Choose your preferred way to get in touch</p>
               </div>
               <button

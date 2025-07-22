@@ -13,6 +13,7 @@ import readYA from "@/assets/images-projects/ReadYA.jpg";
 import defaultProject from "@/assets/images-projects/Project.png";
 import EventMaster from "@/assets/images-projects/EventMaster.png";
 import FADA from "@/assets/images-projects/FADA.png";
+import portfolioImg from "@/assets/images-projects/Portafolio.png";
 
 
 import { 
@@ -587,7 +588,7 @@ export const PROJECTS: Project[] = [
     status: "completed",
     links: {
       live: "https://valorant-explorer.vercel.app",
-      github: "https://github.com/JohnMarulanda/valorant-api-explorer"
+      github: "https://github.com/JohnMarulanda/ValorantAPI"
     },
     features: [
       "Real-time API data integration",
@@ -629,6 +630,33 @@ export const PROJECTS: Project[] = [
       "Optimized for 500+ concurrent users",
       "99.9% crash-free rate",
       "4.8/5 average user rating"
+    ]
+  },
+  {
+    id: "portfolio",
+    title: "Personal Portfolio – John Marulanda",
+    description: "My personal web portfolio showcasing my projects, skills, and experience as a developer and designer.",
+    longDescription: "This portfolio is a modern, responsive web application built with Next.js and TypeScript. It features a curated selection of my best work, a detailed skills section, and a contact form. Designed to be fast, accessible, and visually engaging, it reflects my passion for both development and design.",
+    image: portfolioImg,
+    category: "frontend",
+    technologies: ["nextjs", "react", "typescript", "tailwindcss", "framer-motion"],
+    year: "2024",
+    status: "completed",
+    links: {
+      github: "https://github.com/JohnMarulanda/JohnMVPortfolio"
+    },
+    features: [
+      "Modern responsive design",
+      "Featured projects showcase",
+      "Skills and technologies section",
+      "Contact form integration",
+      "Custom animated UI elements",
+      "Accessible and SEO-friendly"
+    ],
+    results: [
+      "Deployed on Vercel",
+      "Optimized for performance and accessibility",
+      "Fully responsive across devices"
     ]
   },
 ];

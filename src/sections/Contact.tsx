@@ -26,13 +26,13 @@ export const ContactSection = () => {
           <div className="relative z-10 flex flex-col gap-6 items-center md:flex-row md:items-center md:gap-12">
             <div className="text-center md:text-left flex-1">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Let's create something amazing together
+                Let&apos;s create something amazing together
               </h2>
               <p className="text-lg md:text-xl text-purple-100 leading-relaxed font-medium">
-                I'm currently looking for new opportunities. My inbox is always open.
+                I&apos;m currently looking for new opportunities. My inbox is always open.
                 <br className="hidden md:block" />
                 <span className="text-purple-200">
-                  Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                  Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
                 </span>
               </p>
             </div>
