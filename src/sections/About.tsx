@@ -45,6 +45,7 @@ import {
 import { FaRocket, FaPalette, FaMobile, FaGraduationCap } from "react-icons/fa";
 import type React from "react";
 import memojiComputer from '@/assets/images/memoji-computer.png';
+import Image from 'next/image';
 
 interface TechIcon {
   icon: React.ReactNode;
@@ -248,9 +249,10 @@ export const AboutSection = () => {
                 <div className="bg-white p-4 pb-16 rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
                   <div className="w-80 h-96 bg-gray-200 rounded overflow-hidden">
                     {/* Developer portrait image */}
-                    <img
+                    <Image
                       src="/Mifoto.jpg"
                       alt="John Marulanda - Developer portrait"
+                      fill
                       className="w-full h-full object-cover object-center"
                     />
                   </div>

@@ -115,7 +115,7 @@ const ProjectsPage = () => {
               All Projects
             </h1>
             <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-              Explore my complete collection of projects. Search by text or filter by category and technology to find exactly what you're looking for.
+              Explore my complete collection of projects. Search by text or filter by category and technology to find exactly what you&apos;re looking for.
             </p>
           </div>
         </motion.div>
@@ -253,7 +253,7 @@ const ProjectsPage = () => {
               {/* Search Filter */}
               {searchText.trim() && (
                 <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-medium">
-                  Search: "{searchText}"
+                  Search: &quot;{searchText}&quot;
                   <button
                     onClick={() => setSearchText("")}
                     className="hover:bg-white/10 rounded-full p-0.5"

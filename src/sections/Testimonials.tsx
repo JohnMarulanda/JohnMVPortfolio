@@ -73,11 +73,11 @@ export const TestimonialsSection = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                   >
-                    "<span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">Love</span> is an <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">art</span>, just as living is an <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">art</span>; if we want to learn how to <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">love</span> we must proceed in the same way we have to proceed if we want to learn any other <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">art</span>, say music, painting, carpentry, or the{" "}
+                    &ldquo;<span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">Love</span> is an <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">art</span>, just as living is an <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">art</span>; if we want to learn how to <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">love</span> we must proceed in the same way we have to proceed if we want to learn any other <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">art</span>, say music, painting, carpentry, or the{" "}
                     <span className="bg-gradient-to-r from-purple-500 via-fuchsia-500 to-cyan-500 bg-clip-text text-transparent font-semibold">
                       art of medicine and engineering
                     </span>
-                    ."
+                    .&rdquo;
                   </motion.p>
                 </blockquote>
 
