@@ -8,7 +8,7 @@ import { AchievementsSection } from "@/sections/Achievements";
 import { TestimonialsSection } from "@/sections/Testimonials";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
-
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
@@ -24,6 +24,7 @@ export default function Home() {
       <TestimonialsSection />
       <ContactSection />
       <Footer />
+      <Analytics />
     </div>  
   );
 }
