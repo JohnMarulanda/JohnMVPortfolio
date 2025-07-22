@@ -299,6 +299,7 @@ export const HeroSection = () => {
         </motion.div>
 
         {/* Like Button */}
+        {/**
         <motion.div
           className="flex justify-center mt-8 relative z-20"
           initial={{ opacity: 0, y: 20 }}
@@ -307,6 +308,7 @@ export const HeroSection = () => {
         >
           <LikeButton />
         </motion.div>
+        **/}
       </div>
       
       {/* Contact Modal */}

@@ -481,6 +481,7 @@ export const Header = () => {
           </motion.nav>
 
           {/* Selector de idioma - Desktop */}
+          {/*
           <motion.nav
             className="p-2 rounded-2xl bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-lg border border-white/15 shadow-lg relative overflow-hidden"
             initial="initial"
@@ -537,6 +538,7 @@ export const Header = () => {
               ))}
             </ul>
           </motion.nav>
+          */}
 
           {/* Botón de descarga de CV - Desktop */}
           <motion.nav
@@ -607,6 +609,7 @@ export const Header = () => {
           </motion.button>
 
           {/* Selector de idioma - Mobile */}
+          {/*
           <div className="flex items-center gap-2">
             <motion.button
               className="p-2 rounded-xl bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-lg border border-white/15 shadow-lg text-white/70 hover:text-white transition-colors"
@@ -619,6 +622,7 @@ export const Header = () => {
             </motion.button>
 
             {/* Botón de descarga de CV - Mobile */}
+            {/*
             <motion.button
               className="p-2 rounded-xl bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-lg border border-white/15 shadow-lg text-white/70 hover:text-white transition-colors"
               onClick={handleDownloadCV}
@@ -627,6 +631,7 @@ export const Header = () => {
               <Download className="h-4 w-4 text-green-400" />
             </motion.button>
           </div>
+          */}
         </div>
       </div>
 
@@ -734,6 +739,7 @@ export const Header = () => {
               </ul>
               
               {/* Language Selector in Mobile Menu */}
+              {/*
               <div className="mt-4 pt-4 border-t border-white/10">
                 <div className="flex items-center justify-center gap-2">
                   {languageOptions.map((language) => (
@@ -752,6 +758,7 @@ export const Header = () => {
                   ))}
                 </div>
               </div>
+              */}
             </motion.nav>
           </motion.div>
         )}
