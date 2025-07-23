@@ -130,7 +130,7 @@ const cardVariants = {
 export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const handleDownloadCV = () => {
     // URL del CV en Google Drive para abrir en pestaña
-    const googleDriveUrl = "https://drive.google.com/file/d/16HI52Fr9jIvGTEJDbJmYm3qHDs6Z04fK/view?usp=sharing"
+    const googleDriveUrl = "https://drive.google.com/file/d/13nlFdkuVdhFgVCf54WlVqFBjSWzQ-3NB/view?usp=sharing"
     // Ruta local del CV para descarga
     const localCVPath = "/CV_John.pdf"
     

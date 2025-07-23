@@ -21,111 +21,120 @@ interface SocialButton {
   iconColor: string
 }
 
-const socialButtons: SocialButton[] = [
-  {
-    icon: <FaLinkedin className="size-5" />,
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/john-marulanda/",
-    gradient: "radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(2,132,199,0.06) 50%, rgba(3,105,161,0) 100%)",
-    iconColor: "text-blue-500",
-  },
-  {
-    icon: <FaGithub className="size-5" />,
-    label: "GitHub",
-    href: "https://github.com/JohnMarulanda",
-    gradient: "radial-gradient(circle, rgba(139,92,246,0.15) 0%, rgba(124,58,237,0.06) 50%, rgba(109,40,217,0) 100%)",
-    iconColor: "text-purple-500",
-  },
-  {
-    icon: <FaInstagram className="size-5" />,
-    label: "Instagram",
-    href: "https://www.instagram.com/j._.marulanda/",
-    gradient: "radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(219,39,119,0.06) 50%, rgba(190,24,93,0) 100%)",
-    iconColor: "text-pink-500",
-  },
-  {
-    icon: <Download className="size-5" />,
-    label: "CV",
-    href: "/path-to-cv.pdf",
-    gradient: "radial-gradient(circle, rgba(34,197,94,0.15) 0%, rgba(22,163,74,0.06) 50%, rgba(21,128,61,0) 100%)",
-    iconColor: "text-green-500",
-  },
-  {
-    icon: <FaEnvelope className="size-5" />,
-    label: "Gmail",
-    href: "mailto:johnmarulanda74@gmail.com",
-    gradient: "radial-gradient(circle, rgba(239,68,68,0.15) 0%, rgba(220,38,38,0.06) 50%, rgba(185,28,28,0) 100%)",
-    iconColor: "text-red-500",
-  },
-  {
-    icon: <FaTelegramPlane className="size-5" />,
-    label: "Telegram",
-    href: "https://t.me/JohnMarulanda",
-    gradient: "radial-gradient(circle, rgba(34,211,238,0.15) 0%, rgba(6,182,212,0.06) 50%, rgba(8,145,178,0) 100%)",
-    iconColor: "text-cyan-500",
-  },
-]
-
-const socialItemVariants = {
-  initial: { rotateX: 0, opacity: 1, scale: 1 },
-  hover: { rotateX: -90, opacity: 0, scale: 1.1 },
-}
-
-const socialBackVariants = {
-  initial: { rotateX: 90, opacity: 0, scale: 1 },
-  hover: { rotateX: 0, opacity: 1, scale: 1.1 },
-}
-
-const socialGlowVariants = {
-  initial: { opacity: 0, scale: 0.8 },
-  hover: {
-    opacity: 1,
-    scale: 1.8,
-    transition: {
-      opacity: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
-      scale: { duration: 0.4, type: "spring", stiffness: 400, damping: 30 },
-    },
-  },
-}
-
-const socialContainerVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      delay: 0.5,
-      staggerChildren: 0.1,
-    },
-  },
-}
-
-const socialButtonVariants = {
-  hidden: { opacity: 0, y: 20, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-    },
-  },
-}
-
-const sharedTransition = {
-  type: "spring",
-  stiffness: 150,
-  damping: 25,
-  duration: 0.4,
-}
-
 export const HeroSection = () => {
   const { createCursorHandlers } = useWiiCursor();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  // Nueva función para descargar el CV y abrir Google Drive
+  const handleDownloadCV = () => {
+    const googleDriveUrl = "https://drive.google.com/file/d/13nlFdkuVdhFgVCf54WlVqFBjSWzQ-3NB/view?usp=sharing";
+    const localCVPath = "/CV_John.pdf";
+    window.open(googleDriveUrl, '_blank', 'noopener,noreferrer');
+    const link = document.createElement('a');
+    link.href = localCVPath;
+    link.download = 'CV_John_Marulanda.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Constantes de animación movidas aquí para evitar errores
+  const socialItemVariants = {
+    initial: { rotateX: 0, opacity: 1, scale: 1 },
+    hover: { rotateX: -90, opacity: 0, scale: 1.1 },
+  };
+
+  const socialBackVariants = {
+    initial: { rotateX: 90, opacity: 0, scale: 1 },
+    hover: { rotateX: 0, opacity: 1, scale: 1.1 },
+  };
+
+  const socialGlowVariants = {
+    initial: { opacity: 0, scale: 0.8 },
+    hover: {
+      opacity: 1,
+      scale: 1.8,
+      transition: {
+        opacity: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
+        scale: { duration: 0.4, type: "spring", stiffness: 400, damping: 30 },
+      },
+    },
+  };
+
+  const socialContainerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.5,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const socialButtonVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
+  const sharedTransition = {
+    type: "spring",
+    stiffness: 150,
+    damping: 25,
+    duration: 0.4,
+  };
+
+  // socialButtons ahora dentro del componente para acceder a handleDownloadCV
+  const socialButtons: SocialButton[] = [
+    {
+      icon: <FaLinkedin className="size-5" />, label: "LinkedIn",
+      href: "https://www.linkedin.com/in/john-marulanda/",
+      gradient: "radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(2,132,199,0.06) 50%, rgba(3,105,161,0) 100%)",
+      iconColor: "text-blue-500",
+    },
+    {
+      icon: <FaGithub className="size-5" />, label: "GitHub",
+      href: "https://github.com/JohnMarulanda",
+      gradient: "radial-gradient(circle, rgba(139,92,246,0.15) 0%, rgba(124,58,237,0.06) 50%, rgba(109,40,217,0) 100%)",
+      iconColor: "text-purple-500",
+    },
+    {
+      icon: <FaInstagram className="size-5" />, label: "Instagram",
+      href: "https://www.instagram.com/j._.marulanda/",
+      gradient: "radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(219,39,119,0.06) 50%, rgba(190,24,93,0) 100%)",
+      iconColor: "text-pink-500",
+    },
+    {
+      icon: <Download className="size-5" />, label: "CV",
+      href: "#cv-download", // No se usa como link real
+      gradient: "radial-gradient(circle, rgba(34,197,94,0.15) 0%, rgba(22,163,74,0.06) 50%, rgba(21,128,61,0) 100%)",
+      iconColor: "text-green-500",
+    },
+    {
+      icon: <FaEnvelope className="size-5" />, label: "Gmail",
+      href: "mailto:johnmarulanda74@gmail.com",
+      gradient: "radial-gradient(circle, rgba(239,68,68,0.15) 0%, rgba(220,38,38,0.06) 50%, rgba(185,28,28,0) 100%)",
+      iconColor: "text-red-500",
+    },
+    {
+      icon: <FaTelegramPlane className="size-5" />, label: "Telegram",
+      href: "https://t.me/JohnMarulanda",
+      gradient: "radial-gradient(circle, rgba(34,211,238,0.15) 0%, rgba(6,182,212,0.06) 50%, rgba(8,145,178,0) 100%)",
+      iconColor: "text-cyan-500",
+    },
+  ];
 
   const handleLetConnect = () => {
     setIsContactModalOpen(true);
@@ -258,40 +267,72 @@ export const HeroSection = () => {
                       borderRadius: "12px",
                     }}
                   />
-                  
                   {/* Main Button */}
-                  <motion.a
-                    href={social.href}
-                    target={social.href.startsWith('mailto:') ? '_self' : '_blank'}
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center w-12 h-12 relative z-10 bg-gray-700/30 backdrop-blur-sm border border-white/15 text-white/70 group-hover:text-white transition-colors rounded-xl shadow-lg group-hover:shadow-xl"
-                    variants={socialItemVariants}
-                    transition={sharedTransition}
-                    style={{ transformStyle: "preserve-3d", transformOrigin: "center bottom" }}
-                    title={social.label}
-                    {...createCursorHandlers('pointer')}
-                  >
-                    <span className={`transition-colors duration-300 group-hover:${social.iconColor}`}>
-                      {social.icon}
-                    </span>
-                  </motion.a>
-                  
+                  {social.label === "CV" ? (
+                    <motion.button
+                      type="button"
+                      onClick={handleDownloadCV}
+                      className="flex items-center justify-center w-12 h-12 relative z-10 bg-gray-700/30 backdrop-blur-sm border border-white/15 text-white/70 group-hover:text-white transition-colors rounded-xl shadow-lg group-hover:shadow-xl"
+                      variants={socialItemVariants}
+                      transition={sharedTransition}
+                      style={{ transformStyle: "preserve-3d", transformOrigin: "center bottom" }}
+                      title={social.label}
+                      {...createCursorHandlers('pointer')}
+                    >
+                      <span className={`transition-colors duration-300 group-hover:${social.iconColor}`}>
+                        {social.icon}
+                      </span>
+                    </motion.button>
+                  ) : (
+                    <motion.a
+                      href={social.href}
+                      target={social.href.startsWith('mailto:') ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-12 h-12 relative z-10 bg-gray-700/30 backdrop-blur-sm border border-white/15 text-white/70 group-hover:text-white transition-colors rounded-xl shadow-lg group-hover:shadow-xl"
+                      variants={socialItemVariants}
+                      transition={sharedTransition}
+                      style={{ transformStyle: "preserve-3d", transformOrigin: "center bottom" }}
+                      title={social.label}
+                      {...createCursorHandlers('pointer')}
+                    >
+                      <span className={`transition-colors duration-300 group-hover:${social.iconColor}`}>
+                        {social.icon}
+                      </span>
+                    </motion.a>
+                  )}
                   {/* Back Button (3D flip effect) */}
-                  <motion.a
-                    href={social.href}
-                    target={social.href.startsWith('mailto:') ? '_self' : '_blank'}
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center w-12 h-12 absolute inset-0 z-10 bg-gray-700/50 backdrop-blur-sm border border-white/20 text-white/70 group-hover:text-white transition-colors rounded-xl shadow-lg group-hover:shadow-xl"
-                    {...createCursorHandlers('pointer')}
-                    variants={socialBackVariants}
-                    transition={sharedTransition}
-                    style={{ transformStyle: "preserve-3d", transformOrigin: "center top", rotateX: 90 }}
-                    title={social.label}
-                  >
-                    <span className={`transition-colors duration-300 group-hover:${social.iconColor}`}>
-                      {social.icon}
-                    </span>
-                  </motion.a>
+                  {social.label === "CV" ? (
+                    <motion.button
+                      type="button"
+                      onClick={handleDownloadCV}
+                      className="flex items-center justify-center w-12 h-12 absolute inset-0 z-10 bg-gray-700/50 backdrop-blur-sm border border-white/20 text-white/70 group-hover:text-white transition-colors rounded-xl shadow-lg group-hover:shadow-xl"
+                      {...createCursorHandlers('pointer')}
+                      variants={socialBackVariants}
+                      transition={sharedTransition}
+                      style={{ transformStyle: "preserve-3d", transformOrigin: "center top", rotateX: 90 }}
+                      title={social.label}
+                    >
+                      <span className={`transition-colors duration-300 group-hover:${social.iconColor}`}>
+                        {social.icon}
+                      </span>
+                    </motion.button>
+                  ) : (
+                    <motion.a
+                      href={social.href}
+                      target={social.href.startsWith('mailto:') ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-12 h-12 absolute inset-0 z-10 bg-gray-700/50 backdrop-blur-sm border border-white/20 text-white/70 group-hover:text-white transition-colors rounded-xl shadow-lg group-hover:shadow-xl"
+                      {...createCursorHandlers('pointer')}
+                      variants={socialBackVariants}
+                      transition={sharedTransition}
+                      style={{ transformStyle: "preserve-3d", transformOrigin: "center top", rotateX: 90 }}
+                      title={social.label}
+                    >
+                      <span className={`transition-colors duration-300 group-hover:${social.iconColor}`}>
+                        {social.icon}
+                      </span>
+                    </motion.a>
+                  )}
                 </motion.div>
               </motion.div>
             ))}
