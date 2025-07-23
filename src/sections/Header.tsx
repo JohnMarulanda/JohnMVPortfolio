@@ -196,7 +196,7 @@ export const Header = () => {
   const router = useRouter()
 
   const handleDownloadCV = () => {
-    const googleDriveUrl = "https://drive.google.com/file/d/16HI52Fr9jIvGTEJDbJmYm3qHDs6Z04fK/view?usp=sharing"
+    const googleDriveUrl = "https://drive.google.com/file/d/13nlFdkuVdhFgVCf54WlVqFBjSWzQ-3NB/view?usp=sharing"
     const localCVPath = "/CV_John.pdf"
     
     window.open(googleDriveUrl, '_blank', 'noopener,noreferrer')
