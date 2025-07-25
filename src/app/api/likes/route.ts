@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Redis } from '@upstash/redis';
 
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-});
+// Inicializar Redis usando las variables de entorno
+const redis = Redis.fromEnv();
 
 const LIKES_KEY = 'portfolio_likes';
 const VISITORS_KEY = 'portfolio_visitors';
@@ -73,4 +71,4 @@ export async function POST(request: NextRequest) {
       message: 'Error processing like' 
     }, { status: 500 });
   }
-} 
+}
