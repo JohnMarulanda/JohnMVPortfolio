@@ -204,7 +204,7 @@ export const HeroSection = () => {
         </div>
         
         <div className="max-w-lg mx-auto">
-          <h1 className="font-semibold md:text-5xl text-3xl text-center mt-8">
+          <h1 className="font-semibold md:text-5xl text-3xl text-center mt-8" translate="no">
             John MV
           </h1>
           <h2 className="uppercase font-semibold tracking-widest bg-gradient-to-r from-purple-500 to-fuchsia-500 text-transparent bg-clip-text text-center mt-2">
